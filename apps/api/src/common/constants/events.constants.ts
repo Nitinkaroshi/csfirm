@@ -1,0 +1,26 @@
+export const DomainEvents = {
+  CASE_CREATED: 'case.created',
+  CASE_SUBMITTED: 'case.submitted',
+  CASE_STATUS_CHANGED: 'case.status.changed',
+  CASE_ASSIGNED: 'case.assigned',
+  CASE_TRANSFERRED: 'case.transferred',
+  CASE_ESCALATED: 'case.escalated',
+  CASE_DOCS_REQUESTED: 'case.docs.requested',
+  CASE_COMPLETED: 'case.completed',
+  CASE_REJECTED: 'case.rejected',
+  CASE_SLA_WARNING: 'case.sla.warning',
+  CASE_SLA_BREACHED: 'case.sla.breached',
+  CASE_FLAG_ADDED: 'case.flag.added',
+  CHAT_MESSAGE_SENT: 'chat.message.sent',
+  DOCUMENT_UPLOADED: 'document.uploaded',
+  DOCUMENT_VERIFIED: 'document.verified',
+  VAULT_ACCESSED: 'vault.accessed',
+  INVOICE_CREATED: 'invoice.created',
+  INVOICE_ISSUED: 'invoice.issued',
+  INVOICE_PAID: 'invoice.paid',
+  INVOICE_OVERDUE: 'invoice.overdue',
+  USER_REGISTERED: 'user.registered',
+  USER_LOGIN: 'user.login',
+} as const;
+
+export type DomainEvent = (typeof DomainEvents)[keyof typeof DomainEvents];

@@ -1,0 +1,39 @@
+import { StaffRole } from '@prisma/client';
+
+export const PERMISSIONS = {
+  CASE_CREATE: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  CASE_READ: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  CASE_UPDATE: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  CASE_DELETE: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  CASE_ASSIGN: [StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  CASE_TRANSFER: [StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  CASE_REJECT: [StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+
+  USER_CREATE: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  USER_READ: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  USER_UPDATE: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  USER_DELETE: [StaffRole.MASTER_ADMIN],
+
+  ORG_CREATE: [StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  ORG_READ: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  ORG_UPDATE: [StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  ORG_DELETE: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+
+  SERVICE_CREATE: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  SERVICE_READ: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  SERVICE_UPDATE: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  SERVICE_DELETE: [StaffRole.MASTER_ADMIN],
+
+  DOCUMENT_UPLOAD: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  DOCUMENT_READ: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  DOCUMENT_DELETE: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  VAULT_ACCESS: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+
+  INVOICE_CREATE: [StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  INVOICE_READ: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  INVOICE_UPDATE: [StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+
+  CHAT_INTERNAL: [StaffRole.EMPLOYEE, StaffRole.MANAGER, StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  AUDIT_READ: [StaffRole.ADMIN, StaffRole.MASTER_ADMIN],
+  FIRM_UPDATE: [StaffRole.MASTER_ADMIN],
+} as const;
